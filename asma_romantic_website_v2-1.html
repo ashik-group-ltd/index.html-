@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#1b101b">
+<title>For Asma — a little piece of my heart</title>
+<style>
+:root{
+  --night:#1b101b;--night2:#2a1726;--wine:#6e2448;--rose:#eaa0b8;
+  --blush:#f8dce5;--ivory:#fff7f1;--muted:#d5b9c7;--gold:#e6c58b;
+  --line:rgba(255,231,239,.16);--glass:rgba(255,247,241,.075);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:78px}
+body{margin:0;background:var(--night);color:var(--ivory);font-family:Georgia,"Times New Roman",serif;overflow-x:hidden}
+button,input,textarea{font:inherit}
+button,a{-webkit-tap-highlight-color:transparent}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer}
+::selection{background:var(--rose);color:var(--night)}
+.bg-glow{position:fixed;inset:0;z-index:-2;pointer-events:none;background:
+ radial-gradient(ellipse at 15% 10%,rgba(126,42,83,.34),transparent 42%),
+ radial-gradient(ellipse at 88% 45%,rgba(180,82,115,.14),transparent 38%),
+ linear-gradient(155deg,#1b101b,#251525 52%,#170e19)}
+.grain{position:fixed;inset:0;pointer-events:none;z-index:10;opacity:.11;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.25'/%3E%3C/svg%3E")}
+.hearts{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:-1}
+.heart{position:absolute;bottom:-45px;color:var(--rose);opacity:0;animation:rise linear infinite;text-shadow:0 0 18px #eaa0b855}
+@keyframes rise{0%{transform:translateY(0) rotate(0) scale(.7);opacity:0}12%{opacity:.38}85%{opacity:.2}100%{transform:translateY(-115vh) rotate(35deg) scale(1.15);opacity:0}}
+.nav{position:sticky;top:0;z-index:8;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px clamp(16px,5vw,64px);background:rgba(27,16,27,.82);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:9px;font-size:16px;letter-spacing:.03em;color:var(--blush)}
+.brand-mark{display:grid;place-items:center;width:31px;height:31px;border:1px solid #eaa0b87a;border-radius:50%;color:var(--rose);font-size:17px}
+.navlinks{display:flex;gap:clamp(12px,3vw,30px);align-items:center}
+.navlinks a{font:10px/1.4 Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#d6bdca;transition:color .2s}
+.navlinks a:hover{color:var(--gold)}
+.hero{min-height:calc(100svh - 60px);display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:clamp(24px,6vw,90px);max-width:1240px;margin:auto;padding:clamp(48px,8vw,100px) clamp(20px,6vw,82px) 76px}
+.eyebrow{display:flex;align-items:center;gap:12px;font:10px/1.5 Arial,sans-serif;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+.eyebrow:before{content:"";width:30px;height:1px;background:var(--gold)}
+h1{font-size:clamp(4.2rem,10.5vw,9rem);line-height:.82;font-weight:normal;letter-spacing:-.075em;margin:27px 0 22px}
+h1 .for{display:block;color:var(--ivory);font-size:.43em;letter-spacing:.03em;font-style:italic;margin:0 0 19px 7px}
+h1 .name{color:var(--rose);font-style:italic;text-shadow:0 5px 40px #eaa0b822}
+.hero-copy{max-width:480px;color:#d9c3cf;font-size:clamp(1rem,2vw,1.16rem);line-height:1.85;margin:0 0 29px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{min-height:48px;padding:0 22px;border-radius:99px;border:1px solid transparent;display:inline-flex;align-items:center;justify-content:center;gap:10px;font:11px Arial,sans-serif;letter-spacing:.09em;text-transform:uppercase;transition:transform .25s,background .25s,border-color .25s}
+.btn:hover{transform:translateY(-3px)}
+.btn-primary{background:var(--rose);color:#28121f;box-shadow:0 10px 32px #eaa0b824}
+.btn-ghost{border-color:#f8dce54a;color:var(--blush);background:transparent}
+.btn-ghost:hover{border-color:var(--rose)}
+.micro{font:11px Arial,sans-serif;color:#ad91a1;margin-top:22px;letter-spacing:.04em}
+.hero-art{position:relative;min-height:440px;display:grid;place-items:center}
+.orbit{position:absolute;width:min(100%,440px);aspect-ratio:1;border:1px solid #eaa0b82b;border-radius:50%;animation:spin 38s linear infinite}
+.orbit:before,.orbit:after{content:"";position:absolute;border:1px solid #e6c58b30;border-radius:50%;inset:9%}
+.orbit:after{inset:20%}
+@keyframes spin{to{transform:rotate(360deg)}}
+.orbit-dot{position:absolute;top:12%;left:17%;width:9px;height:9px;border-radius:50%;background:var(--gold);box-shadow:0 0 20px var(--gold)}
+.portrait-card{width:min(78%,330px);aspect-ratio:4/5;position:relative;padding:10px;border:1px solid #e6c58b72;background:linear-gradient(145deg,#f7d7e2,#603149 70%);transform:rotate(3deg);box-shadow:0 30px 90px #08050c88;z-index:1}
+.portrait-inner{width:100%;height:100%;display:grid;place-items:center;text-align:center;position:relative;overflow:hidden;background:
+ radial-gradient(circle at 50% 38%,#f9dce5 0 8%,transparent 8.5%),
+ radial-gradient(ellipse at 50% 72%,#9b5471 0 20%,transparent 20.5%),
+ linear-gradient(145deg,#f7dce5,#d98ca8 48%,#4a243e)}
+.portrait-inner:before{content:"";position:absolute;inset:12px;border:1px solid #fff7f18c}
+.portrait-placeholder{position:relative;z-index:1;padding:20px;color:#fff8f6;text-shadow:0 2px 12px #4a243e99}
+.portrait-placeholder .heartline{font-size:42px;display:block;margin-bottom:16px}
+.portrait-placeholder strong{display:block;font-weight:normal;font-style:italic;font-size:clamp(1.6rem,4vw,2.2rem)}
+.portrait-placeholder small{display:block;font:9px Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase;margin-top:10px}
+#heroPhoto{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none}
+.upload-hero{position:absolute;bottom:-19px;left:50%;transform:translateX(-50%);white-space:nowrap;background:var(--ivory);color:var(--wine);border:0;border-radius:99px;padding:12px 17px;box-shadow:0 10px 30px #08050c66;font:10px Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;z-index:3}
+#heroUpload{display:none}
+.side-note{position:absolute;right:-1%;top:20%;writing-mode:vertical-rl;font:9px Arial,sans-serif;letter-spacing:.25em;text-transform:uppercase;color:#d6b2c4}
+.hero-bottom{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);font:9px Arial,sans-serif;letter-spacing:.25em;text-transform:uppercase;color:#b394a6;white-space:nowrap}
+.section{padding:clamp(68px,9vw,112px) clamp(16px,5vw,62px);max-width:1240px;margin:auto}
+.section-top{text-align:center;max-width:650px;margin:0 auto 42px}
+.kicker{font:10px Arial,sans-serif;letter-spacing:.25em;text-transform:uppercase;color:var(--gold)}
+h2{font-size:clamp(2.4rem,6vw,4.6rem);line-height:1.05;letter-spacing:-.045em;font-weight:normal;margin:13px 0 16px}
+h2 em{color:var(--rose);font-weight:normal}
+.section-top p{font-size:15px;line-height:1.8;color:#bfa7b6;margin:0}
+.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:19px}
+.memory{position:relative;background:linear-gradient(150deg,#392035,#251525);padding:11px 11px 17px;border:1px solid #f8dce51b;box-shadow:0 18px 50px #08050c29;transition:transform .3s,border-color .3s}
+.memory:nth-child(2){transform:translateY(22px)}
+.memory:hover{transform:translateY(-6px);border-color:#eaa0b858}
+.memory:nth-child(2):hover{transform:translateY(14px)}
+.frame{aspect-ratio:4/5;position:relative;overflow:hidden;background:linear-gradient(145deg,#f3b9cc,#6a3556);display:grid;place-items:center}
+.frame img{width:100%;height:100%;object-fit:cover;display:none}
+.frame-placeholder{padding:18px;text-align:center;color:#fff4f7}
+.frame-placeholder .symbol{display:block;font-size:36px;color:#fff1f5;margin-bottom:13px}
+.frame-placeholder strong{display:block;font-size:1.3rem;font-style:italic;font-weight:normal}
+.frame-placeholder small{display:block;font:9px/1.6 Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;margin-top:8px;opacity:.85}
+.memory-meta{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:14px 4px 0}
+.memory-meta label{font-size:1.05rem;color:#f6dfe7}
+.memory-meta span{font-size:12px;color:var(--gold)}
+.file-label{display:inline-block;margin:12px 4px 0;color:#d9b6c6;font:10px Arial,sans-serif;text-decoration:underline;text-underline-offset:4px;cursor:pointer}
+.memory input{display:none}
+.story-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:22px;align-items:stretch}
+.story-quote{min-height:330px;padding:clamp(27px,5vw,49px);border:1px solid #e6c58b4b;background:linear-gradient(145deg,#51263f,#2b192a);display:flex;flex-direction:column;justify-content:space-between}
+.quote-mark{font-size:62px;color:var(--gold);line-height:.6}
+.story-quote blockquote{font-size:clamp(1.6rem,4vw,2.6rem);line-height:1.35;font-style:italic;margin:30px 0;color:#fff0f5}
+.story-quote small{font:10px Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#d7b7c6}
+.story-copy{padding:clamp(26px,5vw,48px);background:#fff7f1;color:#432536;display:flex;flex-direction:column;justify-content:center}
+.story-copy h3{font-weight:normal;font-size:2rem;margin:0 0 17px;color:#702b4d}
+.story-copy p{font-size:15px;line-height:1.9;color:#775467}
+.story-copy .sign{font-style:italic;color:#a84f76;font-size:1.35rem;margin-bottom:0}
+.date-panel{max-width:760px;margin:auto;padding:clamp(24px,5vw,44px);border:1px solid #e6c58b45;background:linear-gradient(145deg,#392035,#211521);text-align:center}
+.date-panel .number{font-size:clamp(3.5rem,11vw,7rem);line-height:1;color:var(--rose);letter-spacing:-.06em;margin:10px 0}
+.date-panel p{color:#cbb0c0;line-height:1.7}
+.date-controls{display:flex;gap:10px;max-width:400px;margin:22px auto 0}
+.date-controls input{flex:1;min-width:0;min-height:46px;background:#fff7f1;border:1px solid #e6c58b4b;padding:0 12px;color:#392035;border-radius:2px}
+.letter-shell{max-width:800px;margin:auto;background:#fff7f1;color:#4a2a3b;padding:clamp(27px,7vw,68px);position:relative;box-shadow:0 24px 80px #07040a45}
+.letter-shell:before{content:"";position:absolute;inset:12px;border:1px solid #dba4b8;pointer-events:none}
+.letter-inner{position:relative;z-index:1}
+.letter-top{display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid #e7c4d0;padding-bottom:17px;margin-bottom:25px}
+.letter-top span:first-child{font:10px Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#9c5573}
+.letter-top .seal{font-size:27px;color:#b45b7d}
+.letter-shell h3{font-size:clamp(1.8rem,5vw,2.7rem);font-weight:normal;font-style:italic;color:#782e50;margin:0 0 20px}
+.letter-shell p{font-size:16px;line-height:2;white-space:pre-line;color:#725265}
+.edit-box{margin-top:28px;padding-top:22px;border-top:1px solid #e7c4d0}
+.edit-box label{display:block;font:10px Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#9c5573;margin-bottom:10px}
+.edit-box textarea{width:100%;min-height:130px;resize:vertical;padding:13px;background:#fffdfb;border:1px solid #e5bdcc;color:#4a2a3b;line-height:1.7}
+.edit-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:11px}
+.edit-actions .btn{min-height:42px;font-size:10px}
+.edit-actions .btn-primary{background:#792e51;color:#fff7f1}
+.edit-actions .btn-ghost{border-color:#d6a6b9;color:#792e51}
+.footer{padding:52px 18px 35px;text-align:center;border-top:1px solid var(--line);background:#170e19}
+.footer-heart{font-size:32px;color:var(--rose);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{50%{transform:scale(1.15)}}
+.footer h3{font-size:1.5rem;font-weight:normal;font-style:italic;margin:14px 0 8px}
+.footer p{font:10px Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#ad91a1}
+.toast{position:fixed;bottom:22px;left:50%;transform:translate(-50%,18px);opacity:0;z-index:20;max-width:calc(100% - 30px);padding:13px 18px;border:1px solid #f8dce52b;background:#fff7f1;color:#51263f;font:12px Arial,sans-serif;box-shadow:0 10px 35px #0004;transition:.25s;pointer-events:none}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@media(max-width:760px){
+ .hero{grid-template-columns:1fr;text-align:center;padding-top:60px;gap:35px}
+ .hero .eyebrow{justify-content:center}
+ .hero .eyebrow:before{display:none}
+ h1{font-size:clamp(4.8rem,19vw,7rem)}
+ .hero-copy{margin-left:auto;margin-right:auto}
+ .actions{justify-content:center}
+ .hero-art{min-height:360px;max-width:500px;width:100%;margin:auto}
+ .portrait-card{width:min(68%,290px)}
+ .side-note{right:2%}
+ .hero-bottom{display:none}
+ .gallery{gap:12px}
+ .story-grid{grid-template-columns:1fr}
+ .story-quote{min-height:260px}
+}
+@media(max-width:480px){
+ .nav{padding:12px 13px}
+ .brand{font-size:14px;gap:6px}
+ .brand-mark{width:27px;height:27px}
+ .navlinks{gap:10px}
+ .navlinks a{font-size:8px;letter-spacing:.1em}
+ .hero{padding:54px 18px 48px}
+ .hero-art{min-height:315px}
+ .orbit{width:300px;max-width:94%}
+ .portrait-card{width:66%}
+ .gallery{grid-template-columns:1fr 1fr;gap:10px}
+ .memory{padding:7px 7px 12px}
+ .memory:nth-child(2){transform:translateY(12px)}
+ .memory:nth-child(2):hover{transform:translateY(6px)}
+ .frame{aspect-ratio:3/4}
+ .memory-meta{align-items:flex-start;flex-direction:column;gap:4px;padding-top:10px}
+ .memory-meta label{font-size:.92rem}
+ .memory-meta span{font-size:10px}
+ .file-label{font-size:9px;margin-top:10px}
+ .date-controls{flex-direction:column}
+ .date-controls .btn{width:100%}
+ .letter-shell:before{inset:8px}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div><div class="hearts" id="hearts" aria-hidden="true"></div><div class="grain"></div>
+<nav class="nav">
+  <a class="brand" href="#home"><span class="brand-mark">♡</span> For Asma</a>
+  <div class="navlinks"><a href="#memories">Memories</a><a href="#story">Our story</a><a href="#date">Our day</a><a href="#letter">Letter</a></div>
+</nav>
+<header class="hero" id="home">
+  <div class="hero-text">
+    <div class="eyebrow">A little world made for you</div>
+    <h1><span class="for">This is</span><span class="name">Asma.</span></h1>
+    <p class="hero-copy">Of all the little things life gives us, some people become the most beautiful part of the story. This little corner is for you. ♡</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="#memories">Explore our memories <span>↗</span></a>
+      <a class="btn btn-ghost" href="#letter">Read your letter</a>
+    </div>
+    <div class="micro">Designed with care · Saved in my heart</div>
+  </div>
+  <div class="hero-art">
+    <div class="orbit"><span class="orbit-dot"></span></div>
+    <div class="side-note">A memory in every moment · ♡</div>
+    <div class="portrait-card">
+      <div class="portrait-inner">
+        <div class="portrait-placeholder" id="heroPlaceholder"><span class="heartline">♡</span><strong>Your photo<br>goes here</strong><small>Asma · My favourite person</small></div>
+        <img id="heroPhoto" alt="Asma — main photo">
+      </div>
+      <label class="upload-hero" for="heroUpload">＋ Add a favourite photo</label>
+      <input type="file" id="heroUpload" accept="image/*">
+    </div>
+  </div>
+  <div class="hero-bottom">Scroll to see the little things ↓</div>
+</header>
+
+<section class="section reveal" id="memories">
+  <div class="section-top"><div class="kicker">Collected moments · 01</div><h2>Our <em>little gallery</em></h2><p>Every photo holds a feeling. Add your own pictures to turn this demo into a memory book that belongs to both of you.</p></div>
+  <div class="gallery">
+    <article class="memory"><div class="frame"><img alt="Memory one"><div class="frame-placeholder"><span class="symbol">✧</span><strong>The little things</strong><small>Choose a photo below</small></div></div><div class="memory-meta"><label>Favourite moment</label><span>01 / ♡</span></div><label class="file-label">＋ Add photo<input type="file" accept="image/*" aria-label="Add favourite moment photo"></label></article>
+    <article class="memory"><div class="frame"><img alt="Memory two"><div class="frame-placeholder"><span class="symbol">♡</span><strong>Your smile</strong><small>Choose a photo below</small></div></div><div class="memory-meta"><label>Your beautiful smile</label><span>02 / ♡</span></div><label class="file-label">＋ Add photo<input type="file" accept="image/*" aria-label="Add smile photo"></label></article>
+    <article class="memory"><div class="frame"><img alt="Memory three"><div class="frame-placeholder"><span class="symbol">✿</span><strong>Just us</strong><small>Choose a photo below</small></div></div><div class="memory-meta"><label>Our own world</label><span>03 / ♡</span></div><label class="file-label">＋ Add photo<input type="file" accept="image/*" aria-label="Add another memory photo"></label></article>
+  </div>
+</section>
+
+<section class="section reveal" id="story">
+  <div class="section-top"><div class="kicker">A story still being written · 02</div><h2>Just <em>you & me</em></h2><p>Not a perfect story. Just two people, real moments, and the memories still waiting to happen.</p></div>
+  <div class="story-grid">
+    <div class="story-quote"><span class="quote-mark">“</span><blockquote>If I could keep one moment in a little glass jar, I'd choose a moment with you.</blockquote><small>For the moments that stay</small></div>
+    <div class="story-copy"><h3>Dear Asma,</h3><p>Maybe I won't always find the perfect words, but I hope you always know how special you are to me. Even ordinary days can become beautiful memories when you share them with someone who matters.</p><p>Thank you for being a part of my story. This little website is a reminder that the smallest moments can mean the most.</p><p class="sign">Always, with love ♡</p></div>
+  </div>
+</section>
+
+<section class="section reveal" id="date">
+  <div class="section-top"><div class="kicker">A date worth keeping · 03</div><h2>Our <em>special day</em></h2><p>Choose a date that means something to you both and let this page count the days since it began.</p></div>
+  <div class="date-panel"><div class="kicker">Every day is another page</div><div class="number" id="dayCount">♡</div><p id="counterLabel">days since your special date</p><div class="date-controls"><input type="date" id="specialDate" aria-label="Choose your special date"><button class="btn btn-primary" id="saveDate">Save our date ♡</button></div></div>
+</section>
+
+<section class="section reveal" id="letter">
+  <div class="section-top"><div class="kicker">A few words from the heart · 04</div><h2>A letter <em>for you</em></h2><p>Make it personal. Write the words you want Asma to read, in your own voice.</p></div>
+  <div class="letter-shell"><div class="letter-inner">
+    <div class="letter-top"><span>For your eyes only</span><span class="seal">♡</span></div>
+    <h3>To my Asma,</h3>
+    <p id="letterText">I made this little place for you because some feelings deserve more than a quick message.
+
+I hope these photos remind you of the good moments, make you smile on difficult days, and show you how much the little things mean to me.
+
+No matter how busy life gets, I hope we keep making beautiful memories together.
+
+With love,
+Yours ♡</p>
+    <div class="edit-box"><label for="customLetter">Personalise this letter</label><textarea id="customLetter" placeholder="Write your own message for Asma..."></textarea><div class="edit-actions"><button class="btn btn-primary" id="updateLetter">Update letter ♡</button><button class="btn btn-ghost" id="copyLetter">Copy letter text</button></div></div>
+  </div></div>
+</section>
+
+<footer class="footer"><div class="footer-heart">♥</div><h3>Made especially for Asma</h3><p>Some moments become forever · 2026</p></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+const heartLayer=document.getElementById('hearts');
+for(let i=0;i<17;i++){const h=document.createElement('span');h.className='heart';h.textContent=['♡','♥','✧'][i%3];h.style.left=(Math.random()*100)+'%';h.style.animationDuration=(15+Math.random()*18)+'s';h.style.animationDelay=(-Math.random()*25)+'s';h.style.fontSize=(12+Math.random()*17)+'px';heartLayer.appendChild(h)}
+function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(window.toastTimeout);window.toastTimeout=setTimeout(()=>t.classList.remove('show'),2400)}
+function showImage(input,img,placeholder){const file=input.files&&input.files[0];if(!file)return;if(!file.type.startsWith('image/')){toast('Please choose an image file.');return}const reader=new FileReader();reader.onload=()=>{img.src=reader.result;img.style.display='block';placeholder.style.display='none';toast('Photo added to preview ♡')};reader.readAsDataURL(file)}
+document.getElementById('heroUpload').addEventListener('change',function(){showImage(this,document.getElementById('heroPhoto'),document.getElementById('heroPlaceholder'))});
+document.querySelectorAll('.memory input[type=file]').forEach(input=>input.addEventListener('change',function(){const frame=this.closest('.memory').querySelector('.frame');showImage(this,frame.querySelector('img'),frame.querySelector('.frame-placeholder'))}));
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+const dateInput=document.getElementById('specialDate'),dayCount=document.getElementById('dayCount'),counterLabel=document.getElementById('counterLabel');
+function updateCounter(){if(!dateInput.value){dayCount.textContent='♡';counterLabel.textContent='days since your special date';return}const start=new Date(dateInput.value+'T00:00:00'),today=new Date();today.setHours(0,0,0,0);const days=Math.floor((today-start)/86400000);if(days<0){dayCount.textContent='—';counterLabel.textContent='Your special date is still ahead ♡'}else{dayCount.textContent=days.toLocaleString();counterLabel.textContent=days===1?'day since your special date':'days since your special date'}}
+document.getElementById('saveDate').addEventListener('click',()=>{updateCounter();toast(dateInput.value?'Your date has been set ♡':'Choose a date first.')});
+document.getElementById('updateLetter').addEventListener('click',()=>{const val=document.getElementById('customLetter').value.trim();if(!val){toast('Write your message first.');return}document.getElementById('letterText').textContent=val;toast('Letter updated ♡')});
+document.getElementById('copyLetter').addEventListener('click',async()=>{const txt=document.getElementById('letterText').textContent;try{await navigator.clipboard.writeText(txt)}catch(e){const ta=document.createElement('textarea');ta.value=txt;document.body.appendChild(ta);ta.select();document.execCommand('copy');ta.remove()}toast('Letter copied ♡')});
+</script>
+</body>
+</html>
